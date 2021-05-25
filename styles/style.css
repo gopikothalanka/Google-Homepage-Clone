@@ -66,31 +66,34 @@ nav ol li button {
   border: 1px solid #e9e9e9;
   border-radius: 1.2rem;
   padding: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  position: relative;
   margin: 2rem 0 1rem 0;
 }
 .search-bar:hover {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-.search-bar img:first-child {
-  margin: 3px 0 3px 6px;
+.search-bar .search {
+  position: absolute;
+  top: 2px;
+  left: 10px;
 }
 .search-bar input {
-  width: 500px;
+  width: 100%;
+  height: 100%;
   border: none;
+  background-color: transparent;
 }
-.search-bar img:last-child {
-  margin: 3px 5px 3px 0;
+.search-bar .mic {
+  position: absolute;
+  top: 0;
+  right: 10px;
 }
 .container button {
   background-color: #f8f9fa;
   font-size: 15px;
   padding: 0.5rem 1.5rem;
   margin: 1rem 0.5rem 2rem 0;
-
   border-radius: 4px;
   border: none;
 }
@@ -111,6 +114,7 @@ nav ol li button {
 .languages {
   font-size: 13px;
   margin: 0 0 2rem 0;
+  text-align: center;
 }
 .languages a {
   text-decoration: none;
@@ -129,7 +133,6 @@ footer {
   left: 0;
   right: 0;
   width: 100%;
-  height: 100px;
   font-size: 15px;
   color: var(--link-gray);
 }
@@ -153,4 +156,37 @@ footer {
 }
 .footer-links ol li a:hover {
   text-decoration: underline;
+}
+@media all and (max-width: 610px) {
+  .footer-links {
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    height: auto;
+    font-size: 13px;
+  }
+  .search-bar {
+    width: 80%;
+  }
+  .footer-links ol {
+    flex-wrap: wrap;
+  }
+  .container button {
+    font-size: 13px;
+    margin: 0.5rem 0.5rem 0.5rem 0;
+  }
+  .covid-19 {
+    font-size: 14px;
+  }
+  .container .google-logo {
+    width: 200px;
+  }
+}
+@media (max-width: 320px) {
+  .feeling {
+    display: none;
+  }
+  .languages {
+    display: none;
+  }
 }
